@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Avaliação Integrativa com Elena Leão: uma anamnese completa para organizar sintomas, hábitos e prioridades de cuidado complementar." />
+    <meta name="theme-color" content="#173d31" />
+    <title>Avaliação Integrativa | Elena Leão</title>
+    <style>
+      :root {
+        --forest:#173d31; --forest-2:#245445; --leaf:#3f8066; --sage:#dfeade;
+        --mint:#eef5ee; --cream:#fbf8f0; --paper:#fffefa; --clay:#bd7153;
+        --clay-dark:#9d543b; --ink:#18392f; --muted:#64776f; --line:#dbe6dc;
+        --shadow:0 22px 70px rgba(23,61,49,.12); --radius:22px;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; overflow-x:hidden; color:var(--ink); background:var(--paper); font-family:Arial,Helvetica,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; text-decoration:none; }
+      img { display:block; max-width:100%; }
+      button,a { -webkit-tap-highlight-color:transparent; }
+      :focus-visible { outline:3px solid rgba(189,113,83,.42); outline-offset:4px; }
+      .wrap { width:min(1160px,calc(100% - 44px)); margin-inline:auto; }
+      .eyebrow { display:flex; align-items:center; gap:10px; color:var(--leaf); font-size:.72rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+      .eyebrow::before { content:""; width:24px; height:1px; background:currentColor; }
+      .eyebrow.light { color:#bcd9c4; }
+      .serif { font-family:Georgia,"Times New Roman",serif; font-weight:400; }
+      h1,h2,h3,p { margin-top:0; }
+      h1 { max-width:650px; margin:18px 0 24px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(3rem,5.6vw,5.35rem); font-weight:400; letter-spacing:-.058em; line-height:.96; }
+      h1 em { color:var(--clay); font-weight:400; }
+      h2 { margin:12px 0 20px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(2.25rem,4.1vw,3.8rem); font-weight:400; letter-spacing:-.047em; line-height:1.02; }
+      h3 { line-height:1.2; }
+      .lead { max-width:650px; color:var(--muted); font-size:1.07rem; }
+      .btn { min-height:52px; display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:0 25px; border:1px solid var(--forest); border-radius:999px; background:var(--forest); color:#fff; font-size:.92rem; font-weight:800; box-shadow:0 10px 26px rgba(23,61,49,.18); transition:transform .22s ease,box-shadow .22s ease,background .22s ease; }
+      .btn::after { content:"→"; transition:transform .22s ease; }
+      .btn:hover { transform:translateY(-2px); background:#0e3025; box-shadow:0 14px 32px rgba(23,61,49,.24); }
+      .btn:hover::after { transform:translateX(4px); }
+      .btn.secondary { background:transparent; color:var(--forest); box-shadow:none; border-color:rgba(23,61,49,.25); }
+      .btn.secondary:hover { background:#fff; }
+      .btn.secondary::after { content:"↓"; }
+      .top-note { padding:8px 16px; color:#e8f0e8; background:var(--forest); text-align:center; font-size:.75rem; letter-spacing:.03em; }
+      .nav-shell { position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(23,61,49,.08); background:rgba(251,248,240,.88); backdrop-filter:blur(16px); }
+      nav { height:76px; display:flex; align-items:center; justify-content:space-between; }
+      .brand { display:flex; align-items:center; gap:11px; font-family:Georgia,"Times New Roman",serif; font-size:1.25rem; font-weight:700; }
+      .brand-mark { width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:var(--forest); color:white; }
+      .brand-mark svg { width:21px; }
+      .brand small { display:block; margin-top:-1px; color:var(--leaf); font-family:Arial,Helvetica,sans-serif; font-size:.59rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+      .navlinks { display:flex; align-items:center; gap:28px; color:var(--muted); font-size:.85rem; }
+      .navlinks a:not(.btn) { position:relative; }
+      .navlinks a:not(.btn)::after { content:""; position:absolute; right:0; bottom:-7px; left:0; height:1px; background:var(--leaf); transform:scaleX(0); transition:.2s; }
+      .navlinks a:not(.btn):hover::after { transform:scaleX(1); }
+      .navlinks .btn { min-height:44px; padding-inline:19px; color:white; }
+      .hero { position:relative; overflow:hidden; padding:66px 0 76px; background:linear-gradient(130deg,#f2f6ef 0%,#fbf8f0 58%,#f3eadf 100%); }
+      .hero::before { content:""; position:absolute; width:410px; height:410px; left:-230px; bottom:-240px; border:1px solid rgba(63,128,102,.2); border-radius:50%; box-shadow:0 0 0 60px rgba(63,128,102,.035),0 0 0 120px rgba(63,128,102,.025); }
+      .hero-grid { position:relative; display:grid; grid-template-columns:1.07fr .93fr; align-items:center; gap:64px; }
+      .hero-copy { position:relative; z-index:2; }
+      .hero-copy > p { max-width:600px; margin-bottom:29px; color:var(--muted); font-size:1.12rem; }
+      .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+      .safe-note { display:flex; align-items:center; gap:9px; margin-top:18px; color:var(--muted); font-size:.79rem; }
+      .safe-note span { width:18px; height:18px; display:grid; place-items:center; border-radius:50%; background:var(--sage); color:var(--leaf); font-size:.65rem; }
+      .hero-visual { min-height:570px; position:relative; }
+      .photo-frame { width:88%; height:565px; margin-left:auto; overflow:hidden; position:relative; border-radius:240px 240px 30px 30px; background:var(--sage); box-shadow:var(--shadow); }
+      .photo-frame::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 66%,rgba(23,61,49,.24)); pointer-events:none; }
+      .photo-frame img { width:100%; height:100%; object-fit:cover; object-position:57% 45%; }
+      .orbit { position:absolute; width:160px; height:160px; top:42px; right:-54px; border:1px solid rgba(189,113,83,.35); border-radius:50%; }
+      .orbit::before { content:""; position:absolute; width:12px; height:12px; top:25px; left:11px; border-radius:50%; background:var(--clay); }
+      .float-card { position:absolute; z-index:2; padding:17px 18px; border:1px solid rgba(23,61,49,.08); border-radius:16px; background:rgba(255,254,250,.94); box-shadow:0 15px 35px rgba(23,61,49,.14); backdrop-filter:blur(10px); }
+      .float-card strong { display:block; margin-bottom:3px; font-family:Georgia,"Times New Roman",serif; font-size:1.8rem; font-weight:400; line-height:1; }
+      .float-card small { color:var(--muted); font-size:.75rem; }
+      .card-anamnese { left:-12px; bottom:50px; }
+      .card-care { top:115px; right:-14px; display:flex; align-items:center; gap:10px; }
+      .card-care .seal { width:38px; height:38px; display:grid; place-items:center; border-radius:50%; background:var(--sage); color:var(--leaf); font-size:1.1rem; }
+      .hero-facts { position:relative; z-index:3; display:grid; grid-template-columns:repeat(3,1fr); margin-top:50px; border:1px solid rgba(23,61,49,.1); border-radius:18px; background:rgba(255,255,255,.64); box-shadow:0 14px 35px rgba(23,61,49,.06); backdrop-filter:blur(8px); }
+      .fact { padding:20px 23px; }
+      .fact + .fact { border-left:1px solid rgba(23,61,49,.1); }
+      .fact strong { display:block; margin-bottom:2px; font-family:Georgia,"Times New Roman",serif; font-size:1.45rem; font-weight:400; }
+      .fact span { color:var(--muted); font-size:.77rem; }
+      section { padding:104px 0; }
+      .section-head { max-width:710px; }
+      .problem { background:var(--forest); color:#fff; }
+      .problem-grid { display:grid; grid-template-columns:.88fr 1.12fr; align-items:center; gap:76px; }
+      .problem-copy p { max-width:490px; color:#cbdacf; }
+      .quote-line { margin-top:28px; padding-left:18px; border-left:2px solid var(--clay); color:#f1f5f0; font-family:Georgia,"Times New Roman",serif; font-size:1.22rem; font-style:italic; }
+      .symptom-cloud { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      .symptom { min-height:118px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid rgba(255,255,255,.13); border-radius:16px; background:rgba(255,255,255,.045); transition:.25s ease; }
+      .symptom:hover { transform:translateY(-3px); background:rgba(255,255,255,.075); }
+      .symptom b { color:#b9d5c1; font-size:1.2rem; }
+      .symptom span { color:#eef4ef; font-size:.9rem; }
+      .areas { background:var(--cream); }
+      .areas-top { display:flex; justify-content:space-between; gap:40px; align-items:end; }
+      .areas-top p { max-width:420px; color:var(--muted); }
+      .area-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:8px; margin-top:34px; }
+      .area { min-height:108px; padding:12px 6px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; border:1px solid var(--line); border-radius:50px 50px 12px 12px; background:rgba(255,255,255,.65); color:var(--muted); text-align:center; font-size:.7rem; line-height:1.25; transition:.23s ease; }
+      .area:hover { transform:translateY(-5px); border-color:#bdd2c2; background:#fff; color:var(--ink); box-shadow:0 12px 26px rgba(23,61,49,.07); }
+      .area i { width:30px; height:30px; display:grid; place-items:center; border-radius:50%; background:var(--sage); color:var(--leaf); font-style:normal; font-size:.86rem; }
+      .results { position:relative; }
+      .bento { display:grid; grid-template-columns:repeat(12,1fr); gap:15px; margin-top:42px; }
+      .result-card { min-height:210px; padding:27px; overflow:hidden; position:relative; border:1px solid var(--line); border-radius:var(--radius); background:var(--mint); }
+      .result-card:nth-child(1),.result-card:nth-child(4) { grid-column:span 7; }
+      .result-card:nth-child(2),.result-card:nth-child(3) { grid-column:span 5; }
+      .result-card:nth-child(5),.result-card:nth-child(6) { grid-column:span 6; }
+      .result-card.dark { color:#fff; background:var(--forest); border-color:var(--forest); }
+      .result-card.clay { background:#f5e9e2; border-color:#ead2c7; }
+      .card-index { display:block; margin-bottom:31px; color:var(--leaf); font-size:.68rem; font-weight:800; letter-spacing:.13em; }
+      .dark .card-index { color:#b7d4be; }
+      .result-card h3 { max-width:360px; margin-bottom:9px; font-family:Georgia,"Times New Roman",serif; font-size:1.55rem; font-weight:400; }
+      .result-card p { max-width:490px; margin:0; color:var(--muted); font-size:.89rem; }
+      .result-card.dark p { color:#c7d7cc; }
+      .card-number { position:absolute; right:18px; bottom:-28px; color:rgba(63,128,102,.08); font-family:Georgia,"Times New Roman",serif; font-size:8rem; line-height:1; }
+      .dark .card-number { color:rgba(255,255,255,.06); }
+      .map-preview { padding-top:26px; background:linear-gradient(180deg,var(--paper) 0%,#f4f8f3 100%); }
+      .map-intro { max-width:760px; margin:0 auto 38px; text-align:center; }
+      .map-intro .eyebrow { justify-content:center; }
+      .map-board { overflow:hidden; padding:30px; border:1px solid var(--line); border-radius:28px; background:#fff; box-shadow:0 24px 70px rgba(23,61,49,.1); }
+      .map-board-head { display:flex; align-items:center; justify-content:space-between; gap:20px; padding-bottom:20px; border-bottom:1px solid #e7eee8; }
+      .map-title { display:flex; align-items:center; gap:11px; font-family:Georgia,"Times New Roman",serif; font-size:1.35rem; }
+      .map-title i { width:34px; height:34px; display:grid; place-items:center; border-radius:50%; background:var(--sage); color:var(--leaf); font-family:Arial,Helvetica,sans-serif; font-style:normal; }
+      .demo-badge { padding:7px 11px; border:1px solid #e4d3c9; border-radius:999px; background:#fbf1eb; color:var(--clay-dark); font-size:.68rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; }
+      .map-charts { display:grid; grid-template-columns:1fr 1.05fr; gap:52px; align-items:center; padding:33px 12px 27px; }
+      .radar-chart { width:100%; max-width:410px; margin:auto; overflow:visible; }
+      .radar-grid { fill:none; stroke:#d9e4dc; stroke-width:1; }
+      .radar-axis { stroke:#e4ebe5; stroke-width:1; }
+      .radar-shape { fill:rgba(63,128,102,.24); stroke:#2f927e; stroke-width:2.5; }
+      .radar-dot { fill:#2f927e; }
+      .radar-label { fill:#64776f; font:11px Arial,Helvetica,sans-serif; }
+      .bars { display:grid; gap:13px; }
+      .bar-row { display:grid; grid-template-columns:92px 1fr 38px; gap:11px; align-items:center; }
+      .bar-row label { color:var(--muted); font-size:.78rem; text-align:right; }
+      .bar-track { height:34px; overflow:hidden; border-radius:8px; background:#f0f3f0; }
+      .bar-fill { width:calc(var(--value) * 1%); height:100%; border-radius:8px; background:var(--bar); box-shadow:inset 0 -2px 0 rgba(0,0,0,.05); }
+      .bar-row output { color:var(--muted); font-size:.78rem; }
+      .map-metrics { display:flex; flex-wrap:wrap; gap:9px; padding-top:22px; border-top:1px solid #e7eee8; }
+      .metric { min-height:42px; padding:7px 9px 7px 12px; display:flex; align-items:center; gap:7px; border:1px solid var(--line); border-radius:12px; background:#fff; font-size:.78rem; }
+      .metric b { font-size:.82rem; }
+      .metric em { color:var(--muted); font-style:normal; }
+      .metric span { padding:4px 8px; border-radius:999px; background:#eabf28; color:#fff; font-size:.65rem; font-weight:800; }
+      .map-caption { margin:16px 4px 0; color:var(--muted); font-size:.76rem; text-align:center; }
+      .journey { background:var(--sage); }
+      .journey-head { display:flex; justify-content:space-between; gap:50px; align-items:end; }
+      .journey-head p { max-width:400px; color:var(--muted); }
+      .timeline { display:grid; grid-template-columns:repeat(3,1fr); margin-top:48px; position:relative; }
+      .timeline::before { content:""; position:absolute; height:1px; top:25px; right:16%; left:16%; background:#afc9b5; }
+      .step { position:relative; padding:0 28px; text-align:center; }
+      .step-no { width:50px; height:50px; margin:0 auto 20px; display:grid; place-items:center; position:relative; z-index:1; border:1px solid #aac2af; border-radius:50%; background:var(--paper); color:var(--clay); font-family:Georgia,"Times New Roman",serif; font-size:1.2rem; }
+      .step h3 { margin-bottom:8px; font-size:1.02rem; }
+      .step p { color:var(--muted); font-size:.88rem; }
+      .value { display:grid; grid-template-columns:.92fr 1.08fr; gap:70px; align-items:center; }
+      .report-visual { min-height:510px; padding:46px; position:relative; border-radius:30px; background:linear-gradient(145deg,#e3eee4,#f6eee6); }
+      .report-page { min-height:400px; padding:32px; border-radius:12px; background:white; box-shadow:0 22px 55px rgba(23,61,49,.15); transform:rotate(-3deg); }
+      .report-logo { margin-bottom:28px; color:var(--leaf); font-size:.67rem; font-weight:800; letter-spacing:.1em; }
+      .report-title { margin-bottom:7px; font-family:Georgia,"Times New Roman",serif; font-size:1.7rem; }
+      .report-line { height:8px; margin:12px 0; border-radius:9px; background:#e8f0e9; }
+      .report-line.short { width:67%; }
+      .axis { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin:27px 0; align-items:end; height:95px; }
+      .axis i { display:block; border-radius:5px 5px 0 0; background:#7bab91; }
+      .axis i:nth-child(1) { height:46%; }.axis i:nth-child(2) { height:67%; }.axis i:nth-child(3) { height:55%; }.axis i:nth-child(4) { height:82%; }.axis i:nth-child(5) { height:72%; }
+      .report-tags { display:flex; flex-wrap:wrap; gap:6px; }
+      .report-tags span { padding:5px 9px; border-radius:99px; background:#f5e9e2; color:var(--clay-dark); font-size:.66rem; }
+      .report-seal { width:92px; height:92px; display:grid; place-items:center; position:absolute; right:20px; bottom:20px; border:1px solid var(--clay); border-radius:50%; background:var(--paper); color:var(--clay-dark); text-align:center; font-family:Georgia,"Times New Roman",serif; font-size:.8rem; transform:rotate(7deg); }
+      .checklist { display:grid; gap:15px; margin:29px 0 31px; }
+      .check { display:flex; align-items:flex-start; gap:12px; }
+      .check i { flex:0 0 23px; width:23px; height:23px; display:grid; place-items:center; border-radius:50%; background:var(--sage); color:var(--leaf); font-size:.71rem; font-style:normal; font-weight:900; }
+      .check span { color:var(--muted); font-size:.92rem; }
+      .faq { background:var(--cream); }
+      .faq-layout { display:grid; grid-template-columns:.72fr 1.28fr; gap:80px; align-items:start; }
+      .faq-intro { position:sticky; top:120px; }
+      .faq-intro p { color:var(--muted); }
+      .faq-list { border-top:1px solid var(--line); }
+      details { padding:23px 2px; border-bottom:1px solid var(--line); }
+      summary { padding-right:38px; position:relative; cursor:pointer; list-style:none; font-weight:800; }
+      summary::-webkit-details-marker { display:none; }
+      summary::after { content:"+"; width:28px; height:28px; display:grid; place-items:center; position:absolute; top:-3px; right:0; border:1px solid #bfd0c2; border-radius:50%; color:var(--leaf); font-size:1.05rem; transition:.2s; }
+      details[open] summary::after { content:"−"; transform:rotate(180deg); }
+      details p { max-width:650px; margin:13px 0 0; color:var(--muted); font-size:.91rem; }
+      .final { padding:0 0 82px; background:var(--cream); }
+      .final-box { min-height:440px; padding:70px 8%; overflow:hidden; position:relative; border-radius:36px; background:var(--forest); color:white; text-align:center; }
+      .final-box::before,.final-box::after { content:""; position:absolute; border:1px solid rgba(255,255,255,.1); border-radius:50%; }
+      .final-box::before { width:310px; height:310px; top:-170px; left:-110px; box-shadow:0 0 0 55px rgba(255,255,255,.018); }
+      .final-box::after { width:250px; height:250px; right:-120px; bottom:-130px; box-shadow:0 0 0 55px rgba(255,255,255,.018); }
+      .final-box .eyebrow { justify-content:center; color:#b9d5c1; }
+      .final-box h2 { max-width:760px; margin:16px auto 17px; }
+      .final-box p { max-width:580px; margin:0 auto 27px; color:#cbdacf; }
+      .final-box .btn { position:relative; z-index:1; color:var(--forest); background:#fff9ef; border-color:#fff9ef; }
+      .final-micro { margin-top:15px; color:#a9c4b0; font-size:.74rem; }
+      footer { padding:27px 0 85px; color:var(--muted); font-size:.76rem; }
+      .footer-row { display:flex; justify-content:space-between; gap:30px; }
+      .sticky-mobile { display:none; }
+      .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease,transform .6s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      @media (max-width:980px) {
+        .navlinks a:not(.btn) { display:none; }
+        .hero-grid,.problem-grid,.value,.faq-layout { grid-template-columns:1fr; }
+        .hero { padding-top:50px; }
+        .hero-copy { max-width:760px; }
+        .hero-visual { max-width:620px; width:100%; margin:12px auto 0; }
+        .photo-frame { width:90%; margin-inline:auto; }
+        .problem-grid,.value,.faq-layout { gap:50px; }
+        .area-grid { grid-template-columns:repeat(7,minmax(0,1fr)); }
+        .faq-intro { position:static; }
+      }
+      @media (max-width:680px) {
+        .top-note { font-size:.68rem; }
+        .wrap { width:min(100% - 32px,1160px); }
+        nav { height:68px; }
+        .navlinks .btn { min-height:42px; padding-inline:15px; font-size:.78rem; }
+        .brand { font-size:1.05rem; }
+        .brand-mark { width:32px; height:32px; }
+        .hero { padding:46px 0 58px; }
+        h1 { font-size:clamp(3.15rem,15vw,4.25rem); }
+        h2 { font-size:clamp(2.35rem,11vw,3.1rem); }
+        .hero-copy > p { font-size:1rem; }
+        .hero-actions { display:grid; }
+        .hero-actions .btn { width:100%; }
+        .hero-visual { min-height:470px; }
+        .photo-frame { width:94%; height:455px; }
+        .orbit { display:none; }
+        .card-care { top:70px; right:-2px; }
+        .card-anamnese { left:-3px; bottom:25px; }
+        .hero-facts { grid-template-columns:1fr; margin-top:28px; }
+        .fact { display:flex; align-items:center; justify-content:space-between; padding:14px 18px; gap:15px; }
+        .fact + .fact { border-top:1px solid rgba(23,61,49,.1); border-left:0; }
+        .fact strong { margin:0; font-size:1.23rem; }
+        .fact span { text-align:right; }
+        section { padding:78px 0; }
+        .symptom-cloud { grid-template-columns:1fr; }
+        .symptom { min-height:95px; }
+        .areas-top,.journey-head { display:block; }
+        .area-grid { grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px; }
+        .area { min-height:94px; padding-inline:4px; border-radius:42px 42px 10px 10px; font-size:.62rem; }
+        .area i { width:27px; height:27px; font-size:.78rem; }
+        .bento { display:block; }
+        .result-card { min-height:205px; margin-bottom:12px; }
+        .map-preview { padding-top:4px; }
+        .map-board { padding:20px 15px; border-radius:20px; }
+        .map-board-head { align-items:flex-start; }
+        .map-title { font-size:1.1rem; }
+        .map-charts { grid-template-columns:1fr; gap:20px; padding:25px 0 20px; }
+        .radar-chart { max-width:340px; }
+        .bar-row { grid-template-columns:79px 1fr 33px; gap:8px; }
+        .bar-track { height:29px; }
+        .map-metrics { gap:7px; }
+        .metric { flex:1 1 145px; justify-content:space-between; }
+        .timeline { grid-template-columns:1fr; gap:30px; }
+        .timeline::before { width:1px; height:auto; top:20px; bottom:20px; left:25px; right:auto; }
+        .step { padding:0 0 0 72px; text-align:left; }
+        .step-no { position:absolute; left:0; top:0; margin:0; }
+        .report-visual { min-height:430px; padding:25px; }
+        .report-page { min-height:350px; padding:25px; }
+        .report-seal { width:78px; height:78px; }
+        .final { padding-bottom:0; }
+        .final .wrap { width:100%; }
+        .final-box { min-height:430px; padding:68px 24px 90px; border-radius:0; }
+        .footer-row { display:block; }
+        .sticky-mobile { min-height:52px; display:flex; position:fixed; right:14px; bottom:12px; left:14px; z-index:30; box-shadow:0 12px 28px rgba(23,61,49,.35); }
+        footer { padding-bottom:90px; }
+      }
+      @media (max-width:520px) {
+        .area-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+        .area { min-height:108px; padding-inline:10px; border-radius:52px 52px 13px 13px; font-size:.76rem; }
+        .area i { width:34px; height:34px; font-size:.95rem; }
+      }
+      @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } .reveal { opacity:1; transform:none; } }
+    </style>
+  </head>
+  <body>
+    <div class="top-note">Avaliação integrativa e complementar • Atendimento personalizado com Elena Leão</div>
+    <div class="nav-shell">
+      <nav class="wrap" aria-label="Navegação principal">
+        <a class="brand" href="#inicio" aria-label="Elena Leão, início">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M18.7 4.3C12.4 5 7.4 8.7 6 14.7c3.4.6 7.1-.6 9.3-3.1M6.1 19.6c.1-5.4 3.1-8.6 8.7-10.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          <span>Elena Leão<small>Naturopata</small></span>
+        </a>
+        <div class="navlinks"><a href="#avaliacao">A avaliação</a><a href="#como-funciona">Como funciona</a><a href="#perguntas">Dúvidas</a><a class="btn" href="#agendar">Quero agendar</a></div>
+      </nav>
+    </div>
+
+    <header class="hero" id="inicio">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Avaliação Integrativa Personalizada</div>
+            <h1>Entenda sua saúde com <em>mais clareza.</em></h1>
+            <p>Uma escuta profunda que conecta sintomas, hábitos, emoções e vitalidade para revelar as prioridades do seu cuidado.</p>
+            <div class="hero-actions"><a class="btn" href="#agendar">Quero minha avaliação</a><a class="btn secondary" href="#avaliacao">Descobrir o que recebo</a></div>
+            <div class="safe-note"><span>✓</span> Abordagem acolhedora, individual e complementar</div>
+          </div>
+          <div class="hero-visual" aria-label="Experiência de cuidado e bem-estar">
+            <div class="orbit" aria-hidden="true"></div>
+            <div class="photo-frame"><img src="assets/hero-elena-leao.jpg" alt="Mulher tranquila em um ambiente acolhedor, tomando chá" /></div>
+            <div class="float-card card-anamnese"><strong>60+</strong><small>perguntas na anamnese</small></div>
+            <div class="float-card card-care"><span class="seal">✦</span><small><b>Cuidado que olha</b><br />para você por inteiro</small></div>
+          </div>
+        </div>
+        <div class="hero-facts" aria-label="Diferenciais da avaliação">
+          <div class="fact"><strong>14 dimensões</strong><span>de saúde e estilo de vida</span></div>
+          <div class="fact"><strong>5 eixos</strong><span>em um mapa integrativo</span></div>
+          <div class="fact"><strong>1 devolutiva</strong><span>clara e personalizada</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="problem">
+        <div class="wrap problem-grid reveal">
+          <div class="problem-copy"><div class="eyebrow light">Quando olhar um sintoma isolado não basta</div><h2>Seu corpo conta uma história completa.</h2><p>Cansaço, sono agitado, digestão sensível, dores recorrentes e sobrecarga emocional podem estar conversando entre si. A avaliação cria espaço para enxergar essas relações com atenção.</p><div class="quote-line">“Quero entender o que meu corpo está tentando me dizer.”</div></div>
+          <div class="symptom-cloud"><div class="symptom"><b>01</b><span>Vários desconfortos ao mesmo tempo</span></div><div class="symptom"><b>02</b><span>Dificuldade para saber por onde começar</span></div><div class="symptom"><b>03</b><span>Desejo de compreender padrões recorrentes</span></div><div class="symptom"><b>04</b><span>Busca por um plano que respeite sua realidade</span></div></div>
+        </div>
+      </section>
+
+      <section class="areas">
+        <div class="wrap reveal">
+          <div class="areas-top"><div class="section-head"><div class="eyebrow">Uma anamnese realmente ampla</div><h2>Mais de 60 perguntas. Uma visão de 360°.</h2></div><p>A conversa percorre 14 dimensões para que nenhuma informação importante fique solta ou fora de contexto.</p></div>
+          <div class="area-grid" aria-label="Áreas investigadas na anamnese">
+            <div class="area"><i>◇</i><span>Queixa principal</span></div><div class="area"><i>✚</i><span>Histórico de saúde</span></div><div class="area"><i>≈</i><span>Saúde digestiva</span></div><div class="area"><i>○</i><span>Saúde hormonal</span></div><div class="area"><i>♡</i><span>Emoções</span></div><div class="area"><i>☾</i><span>Sono</span></div><div class="area"><i>↟</i><span>Energia e fadiga</span></div><div class="area"><i>△</i><span>Dor e inflamação</span></div><div class="area"><i>⌁</i><span>Exposições</span></div><div class="area"><i>♢</i><span>Estilo de vida</span></div><div class="area"><i>◎</i><span>Saúde reprodutiva</span></div><div class="area"><i>+</i><span>Saúde geral</span></div><div class="area"><i>⌂</i><span>Contexto pessoal</span></div><div class="area"><i>→</i><span>Seus objetivos</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="results" id="avaliacao">
+        <div class="wrap reveal">
+          <div class="section-head"><div class="eyebrow">O que você recebe</div><h2>Clareza para enxergar o todo e decidir os próximos passos.</h2><p class="lead">Os achados são organizados em uma devolutiva visual e compreensível, criada para orientar sua conversa de cuidado.</p></div>
+          <div class="bento">
+            <article class="result-card dark"><span class="card-index">VISÃO GERAL</span><h3>Mapa de saúde em 5 eixos</h3><p>Uma leitura dos aspectos inflamatório, infeccioso, tóxico, emocional e sistêmico.</p><span class="card-number">5</span></article>
+            <article class="result-card clay"><span class="card-index">POSSIBILIDADES</span><h3>Hipóteses integrativas</h3><p>Possibilidades que podem merecer investigação e acompanhamento profissional.</p><span class="card-number">01</span></article>
+            <article class="result-card"><span class="card-index">CONEXÕES</span><h3>Cadeias causais identificadas</h3><p>Relações possíveis entre sinais, hábitos, emoções e contexto de vida.</p><span class="card-number">02</span></article>
+            <article class="result-card"><span class="card-index">DIREÇÃO</span><h3>Padrões clínicos e prioridades</h3><p>Os temas que aparecem com mais força, organizados para orientar a devolutiva e o cuidado.</p><span class="card-number">03</span></article>
+            <article class="result-card clay"><span class="card-index">RECURSOS</span><h3>Equipamentos indicados</h3><p>Opções complementares consideradas conforme necessidade, adequação e segurança.</p><span class="card-number">04</span></article>
+            <article class="result-card dark"><span class="card-index">PLANO</span><h3>Protocolos terapêuticos sugeridos</h3><p>Possibilidades de cuidado complementar e acompanhamento individualizado.</p><span class="card-number">05</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-preview" aria-labelledby="mapa-titulo">
+        <div class="wrap reveal">
+          <div class="map-intro"><div class="eyebrow">Veja como a devolutiva ganha forma</div><h2 id="mapa-titulo">Um mapa visual para compreender seus cinco eixos.</h2><p class="lead">Os resultados são apresentados de maneira clara, ajudando você a visualizar quais áreas merecem mais atenção na conversa integrativa.</p></div>
+          <div class="map-board">
+            <div class="map-board-head"><div class="map-title"><i aria-hidden="true">✦</i><span>Mapa de Saúde — 5 Eixos</span></div><span class="demo-badge">Exemplo ilustrativo</span></div>
+            <div class="map-charts">
+              <svg class="radar-chart" viewBox="0 0 300 280" role="img" aria-label="Gráfico radar ilustrativo dos cinco eixos da saúde">
+                <polygon class="radar-grid" points="150,50 245.1,119.1 208.8,230.9 91.2,230.9 54.9,119.1" />
+                <polygon class="radar-grid" points="150,75 221.3,126.8 194.1,210.7 105.9,210.7 78.7,126.8" />
+                <polygon class="radar-grid" points="150,100 197.6,134.5 179.4,190.5 120.6,190.5 102.4,134.5" />
+                <polygon class="radar-grid" points="150,125 173.8,142.3 164.7,170.2 135.3,170.2 126.2,142.3" />
+                <line class="radar-axis" x1="150" y1="150" x2="150" y2="50" /><line class="radar-axis" x1="150" y1="150" x2="245.1" y2="119.1" /><line class="radar-axis" x1="150" y1="150" x2="208.8" y2="230.9" /><line class="radar-axis" x1="150" y1="150" x2="91.2" y2="230.9" /><line class="radar-axis" x1="150" y1="150" x2="54.9" y2="119.1" />
+                <polygon class="radar-shape" points="150,100 190.9,136.7 175.9,185.6 117.1,195.3 98.6,133.3" />
+                <circle class="radar-dot" cx="150" cy="100" r="3" /><circle class="radar-dot" cx="190.9" cy="136.7" r="3" /><circle class="radar-dot" cx="175.9" cy="185.6" r="3" /><circle class="radar-dot" cx="117.1" cy="195.3" r="3" /><circle class="radar-dot" cx="98.6" cy="133.3" r="3" />
+                <text class="radar-label" x="150" y="30" text-anchor="middle">Inflamatório</text><text class="radar-label" x="252" y="115">Infeccioso</text><text class="radar-label" x="216" y="250">Tóxico</text><text class="radar-label" x="84" y="250" text-anchor="end">Emocional</text><text class="radar-label" x="48" y="115" text-anchor="end">Sistêmico</text>
+              </svg>
+              <div class="bars" role="img" aria-label="Barras ilustrativas: Inflamatório 50%, Infeccioso 43%, Tóxico 44%, Emocional 56% e Sistêmico 54%">
+                <div class="bar-row"><label>Inflamatório</label><div class="bar-track"><div class="bar-fill" style="--value:50;--bar:#e95d56"></div></div><output>50%</output></div>
+                <div class="bar-row"><label>Infeccioso</label><div class="bar-track"><div class="bar-fill" style="--value:43;--bar:#e9a72b"></div></div><output>43%</output></div>
+                <div class="bar-row"><label>Tóxico</label><div class="bar-track"><div class="bar-fill" style="--value:44;--bar:#8a62d8"></div></div><output>44%</output></div>
+                <div class="bar-row"><label>Emocional</label><div class="bar-track"><div class="bar-fill" style="--value:56;--bar:#4d83df"></div></div><output>56%</output></div>
+                <div class="bar-row"><label>Sistêmico</label><div class="bar-track"><div class="bar-fill" style="--value:54;--bar:#2ba97e"></div></div><output>54%</output></div>
+              </div>
+            </div>
+            <div class="map-metrics" aria-label="Resumo ilustrativo dos eixos">
+              <div class="metric"><b>Inflamatório</b><em>50%</em><span>Moderado</span></div><div class="metric"><b>Infeccioso</b><em>43%</em><span>Moderado</span></div><div class="metric"><b>Tóxico</b><em>44%</em><span>Moderado</span></div><div class="metric"><b>Emocional</b><em>56%</em><span>Moderado</span></div><div class="metric"><b>Sistêmico</b><em>54%</em><span>Moderado</span></div>
+            </div>
+          </div>
+          <p class="map-caption">Os dados acima são apenas demonstrativos. Cada avaliação apresenta resultados individualizados conforme a anamnese.</p>
+        </div>
+      </section>
+
+      <section class="journey" id="como-funciona">
+        <div class="wrap reveal">
+          <div class="journey-head"><div class="section-head"><div class="eyebrow">Como funciona</div><h2>Uma jornada simples, cuidadosa e com direção.</h2></div><p>Você não precisa chegar sabendo explicar tudo. As perguntas conduzem a conversa passo a passo.</p></div>
+          <div class="timeline"><article class="step"><div class="step-no">01</div><h3>Compartilhe sua história</h3><p>Você fala sobre suas queixas, objetivos, hábitos e o contexto da sua vida.</p></article><article class="step"><div class="step-no">02</div><h3>Responda à anamnese</h3><p>Mais de 60 perguntas organizam a investigação de forma ampla e estruturada.</p></article><article class="step"><div class="step-no">03</div><h3>Receba sua devolutiva</h3><p>Você compreende os achados, as prioridades e as possibilidades de acompanhamento.</p></article></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap value reveal">
+          <div class="report-visual" aria-hidden="true"><div class="report-page"><div class="report-logo">AVALIAÇÃO INTEGRATIVA</div><div class="report-title">Seu mapa de saúde</div><div class="report-line"></div><div class="report-line short"></div><div class="axis"><i></i><i></i><i></i><i></i><i></i></div><div class="report-tags"><span>Prioridades</span><span>Conexões</span><span>Próximos passos</span></div></div><div class="report-seal">Feito<br />para você</div></div>
+          <div><div class="eyebrow">Profundidade sem complicação</div><h2>Informação que vira compreensão.</h2><p class="lead">Você não recebe apenas uma lista de sintomas. Recebe uma leitura organizada, com linguagem clara, para entender o que merece atenção no seu momento.</p><div class="checklist"><div class="check"><i>✓</i><span>Anamnese com 60+ perguntas, organizada em 14 áreas.</span></div><div class="check"><i>✓</i><span>Devolutiva visual com padrões, conexões e prioridades.</span></div><div class="check"><i>✓</i><span>Possibilidades de cuidado adaptadas à sua realidade.</span></div><div class="check"><i>✓</i><span>Orientação responsável, integrativa e complementar.</span></div></div><a class="btn" href="#agendar">Quero começar minha jornada</a></div>
+        </div>
+      </section>
+
+      <section class="faq" id="perguntas">
+        <div class="wrap faq-layout reveal">
+          <div class="faq-intro"><div class="eyebrow">Perguntas frequentes</div><h2>Para você começar com segurança.</h2><p>Algumas respostas importantes antes de dar o primeiro passo.</p></div>
+          <div class="faq-list">
+            <details><summary>A avaliação substitui consulta ou acompanhamento médico?</summary><p>Não. Esta é uma abordagem integrativa e complementar. Ela não substitui diagnóstico, exames, tratamentos ou acompanhamento com profissionais de saúde habilitados.</p></details>
+            <details><summary>Preciso estar com uma queixa específica?</summary><p>Não necessariamente. A avaliação também pode apoiar quem deseja compreender melhor hábitos, bem-estar e prioridades de autocuidado.</p></details>
+            <details><summary>O que acontece depois da anamnese?</summary><p>As informações são organizadas em uma devolutiva para uma conversa individualizada sobre achados, prioridades e possibilidades de cuidado complementar.</p></details>
+            <details><summary>Os protocolos são iguais para todas as pessoas?</summary><p>Não. Qualquer sugestão é considerada individualmente, conforme sua história, objetivos, necessidades e resposta ao acompanhamento.</p></details>
+            <details><summary>Posso fazer a avaliação se já faço tratamento?</summary><p>Sim. Informe tratamentos e medicamentos durante a anamnese. A abordagem integrativa deve sempre respeitar o acompanhamento em curso.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="final" id="agendar">
+      <div class="wrap"><div class="final-box reveal"><div class="eyebrow">Seu próximo passo pode começar hoje</div><h2>Reserve um tempo para olhar para você por inteiro.</h2><p>Agende sua Avaliação Integrativa com Elena Leão e comece a compreender sua saúde com mais clareza e direção.</p><a class="btn" href="mailto:SEU-EMAIL-AQUI?subject=Quero%20agendar%20minha%20Avalia%C3%A7%C3%A3o%20Integrativa">Quero agendar minha avaliação</a><div class="final-micro">Atendimento individual • Abordagem integrativa e complementar</div></div></div>
+    </section>
+
+    <footer><div class="wrap footer-row"><p>© <span id="year"></span> Elena Leão | Naturopata</p><p>A avaliação não substitui diagnóstico, exames, tratamento ou acompanhamento médico.</p></div></footer>
+    <a class="btn sticky-mobile" href="#agendar">Quero agendar minha avaliação</a>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+      }), { threshold:.12 });
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
